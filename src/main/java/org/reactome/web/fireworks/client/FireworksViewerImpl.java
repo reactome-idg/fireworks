@@ -63,7 +63,7 @@ public class FireworksViewerImpl extends ResizeComposite implements FireworksVie
 
     private FireworksViewerManager manager;
 
-    private FireworksCanvas canvases;
+    protected FireworksCanvas canvases;
 
     private FireworksData data;
 

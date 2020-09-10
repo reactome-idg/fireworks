@@ -81,6 +81,7 @@ class FireworksCanvas extends AbsolutePanel implements HasHandlers, RequiresResi
     private IllustrationPanel illustration;
 
     private FireworksThumbnail thumbnail;
+    protected BottomContainerPanel bottomContainerPanel;
     private FireworksInfo info;
 
     private List<Canvas> canvases = new LinkedList<>();
@@ -128,7 +129,7 @@ class FireworksCanvas extends AbsolutePanel implements HasHandlers, RequiresResi
         this.add(rightContainerPanel);
 
         //Bottom Controls container
-        BottomContainerPanel bottomContainerPanel = new BottomContainerPanel();
+        bottomContainerPanel = new BottomContainerPanel();
         this.add(bottomContainerPanel);
 
         //Flagged Objects control panel
