@@ -59,7 +59,7 @@ public class FireworksViewerImpl extends ResizeComposite implements FireworksVie
         SearchItemHoveredHandler, SearchItemSelectedHandler,
         NodeFlagRequestedHandler, NodeFlaggedResetHandler {
 
-    private EventBus eventBus;
+    protected EventBus eventBus;
 
     private FireworksViewerManager manager;
 

@@ -36,7 +36,7 @@ import java.util.Set;
  * @author Antonio Fabregat <fabregat@ebi.ac.uk>
  * @author Kostas Sidiropoulos <ksidiro@ebi.ac.uk>
  */
-class FireworksCanvas extends AbsolutePanel implements HasHandlers, RequiresResize,
+public class FireworksCanvas extends AbsolutePanel implements HasHandlers, RequiresResize,
         FireworksVisibleAreaChangedHandler, FireworksZoomHandler,
         NodeSelectedHandler, NodeSelectedResetHandler, NodeHoverHandler, NodeHoverResetHandler,
         AnalysisPerformedHandler, AnalysisResetHandler {
@@ -81,7 +81,7 @@ class FireworksCanvas extends AbsolutePanel implements HasHandlers, RequiresResi
     private IllustrationPanel illustration;
 
     private FireworksThumbnail thumbnail;
-    protected BottomContainerPanel bottomContainerPanel;
+    private BottomContainerPanel bottomContainerPanel;
     private FireworksInfo info;
 
     private List<Canvas> canvases = new LinkedList<>();
@@ -170,6 +170,10 @@ class FireworksCanvas extends AbsolutePanel implements HasHandlers, RequiresResi
 
         this.eventBus.addHandler(AnalysisPerformedEvent.TYPE, this);
         this.eventBus.addHandler(AnalysisResetEvent.TYPE, this);
+    }
+    
+    public BottomContainerPanel getBottomContainerPanel() {
+    	return bottomContainerPanel;
     }
 
     public HandlerRegistration addClickHandler(ClickHandler handler) {

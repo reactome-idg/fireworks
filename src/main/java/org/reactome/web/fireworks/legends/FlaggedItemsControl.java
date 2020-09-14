@@ -25,14 +25,14 @@ import java.util.Collection;
 public class FlaggedItemsControl extends LegendPanel implements ClickHandler, ChangeHandler,
         NodeFlaggedHandler, NodeFlaggedResetHandler, NodeFlagRequestedHandler {
 
-    private InlineLabel msgLabel;
+    protected InlineLabel msgLabel;
     private PwpButton closeBtn;
-    private Image loadingIcon;
-    private InlineLabel interactorsLabel;
-    private ListBox selector;
+    protected Image loadingIcon;
+    protected InlineLabel interactorsLabel;
+    protected ListBox selector;
 
-    private String flagTerm;
-    private Boolean includeInteractors = false;
+    protected String flagTerm;
+    protected Boolean includeInteractors = false;
 
     public FlaggedItemsControl(final EventBus eventBus) {
         super(eventBus);
