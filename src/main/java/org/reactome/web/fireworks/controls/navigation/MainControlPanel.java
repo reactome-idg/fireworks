@@ -14,13 +14,15 @@ import org.reactome.web.fireworks.controls.common.IconButton;
 import org.reactome.web.fireworks.events.ControlActionEvent;
 import org.reactome.web.fireworks.events.NodeSelectedEvent;
 import org.reactome.web.fireworks.events.NodeSelectedResetEvent;
+import org.reactome.web.fireworks.events.ShowReactfoamButtonEvent;
 import org.reactome.web.fireworks.handlers.NodeSelectedHandler;
 import org.reactome.web.fireworks.handlers.NodeSelectedResetHandler;
+import org.reactome.web.fireworks.handlers.ShowReactfoamButtonHandler;
 
 /**
  * @author Antonio Fabregat <fabregat@ebi.ac.uk>
  */
-public class MainControlPanel extends FlowPanel implements ClickHandler, NodeSelectedHandler, NodeSelectedResetHandler {
+public class MainControlPanel extends FlowPanel implements ClickHandler, NodeSelectedHandler, NodeSelectedResetHandler, ShowReactfoamButtonHandler {
 
     private EventBus eventBus;
     private Button fitAll;
@@ -48,6 +50,7 @@ public class MainControlPanel extends FlowPanel implements ClickHandler, NodeSel
 
         this.eventBus.addHandler(NodeSelectedEvent.TYPE, this);
         this.eventBus.addHandler(NodeSelectedResetEvent.TYPE, this);
+        this.eventBus.addHandler(ShowReactfoamButtonEvent.TYPE, this);
     }
 
 
@@ -76,6 +79,11 @@ public class MainControlPanel extends FlowPanel implements ClickHandler, NodeSel
             this.open.setEnabled(false);
         }
     }
+    
+    @Override
+	public void onToggleReactfoamButton(ShowReactfoamButtonEvent event) {
+		foam.setVisible(event.getShowReactfoamButton());
+	}
 
 
     public static Resources RESOURCES;
