@@ -73,7 +73,7 @@ public class FireworksViewerImpl extends ResizeComposite implements FireworksVie
 
     private ResultFilter filter = new ResultFilter();
 
-    private boolean forceFireworksDraw = true;
+    protected boolean forceFireworksDraw = true;
 
     // mouse positions relative to canvas (not the model)
     // Do not assign the same value at the beginning
@@ -86,8 +86,8 @@ public class FireworksViewerImpl extends ResizeComposite implements FireworksVie
 
     private Node hovered = null;
     private Node selected = null;
-    private Set<Node> nodesToFlag = null;
-    private Set<Edge> edgesToFlag = null;
+    protected Set<Node> nodesToFlag = null;
+    protected Set<Edge> edgesToFlag = null;
 
     protected String flagTerm;
     protected Boolean includeInteractors = false;
